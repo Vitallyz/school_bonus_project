@@ -1,0 +1,10 @@
+<h1>All Students:</h1>
+<% @enrollments.each.with_index(1) do |e, index| %>
+    <p>
+        <%=  index.to_s + ". Student first name: " + @students.find(e.student_id).first_name + " Class: " + @school_classes.find(e.school_class_id).title %>
+        <span><%= link_to "Edit", edit_enrollment_path(e) %> </span>
+        <span><%= link_to "Delete", enrollment_path(e), method: "delete" %> </span>
+    </p>
+<% end %>
+
+<p><%= link_to "Register Enrollment", new_enrollment_path %></p>

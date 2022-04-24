@@ -1,0 +1,4 @@
+<h1>Enrollment Info:</h1>
+<%= "Student Name: " + @students.find(@enrollment.student_id).first_name + " " + @students.find(@enrollment.student_id).last_name + " Class: " + @school_classes.find(@enrollment.school_class_id).title %>
+
+<p><%= link_to "Back to Enrollments", enrollments_path %></p>

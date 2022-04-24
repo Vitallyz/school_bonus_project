@@ -1,0 +1,8 @@
+<h1>Add New Enrloments</h1>
+<%= form_for @enrollment do |f| %>
+    <%= f.label :student_id %>
+    <%= f.select :student_id, @students.all.map { |s| [s.first_name + " " + s.last_name, s.id]}  %>
+    <%= f.label :school_class_id %>
+    <%= f.select :school_class_id, @school_classes.all.map {|sc| [sc.title, sc.id]} %>
+    <%= f.submit %>
+<% end %>

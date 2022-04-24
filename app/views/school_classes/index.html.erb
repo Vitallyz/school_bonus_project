@@ -1,0 +1,10 @@
+<h1>All School Classes:</h1>
+<% @school_classes.each.with_index(1) do |sc, index| %>
+    <p>
+        <%=  index.to_s + ". " + sc.title + ", Room: " + sc.room_number.to_s %>
+        <span><%= link_to "Edit", edit_school_class_path(sc) %> </span>
+        <span><%= link_to "Delete", school_class_path(sc), method: "delete" %> </span>
+    </p>
+<% end %>
+
+<p><%= link_to "Add School Class", new_school_class_path %></p>
